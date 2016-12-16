@@ -3,23 +3,28 @@ import gab.opencv.*;
 
 
 PImage img;
-Vector polygons = new Vector(50);
-Polygon[] parent = new Polygon[50];
+//Vector polygons = new Vector(1000);
+//Polygon[] parent = new Polygon[1000];
+Polygon testpoly = new Polygon();
+//Drawing[] testdrawing = new Drawing[10];
+GenAlg test = new GenAlg(36,50,70,90);
+float[] fitness = new float[12];
+Drawing testdrawing = new Drawing(50);
+int generation = 0;
+int step = 0;
+
 void setup(){
- size(800,600);
   background(0);
   img = loadImage("Sunflower.jpg"); 
-for (int i = 0; i < 50; i++){
-  parent[i] = new Polygon();
-}
+  size(200,200);
+
 
 }
 
 void draw(){
-  //image(img,0,0);
-
-  
-for (int i = 0; i < 50; i++){
-  parent[i].draw();
-}
+//test.draw();
+test.setShapes(test.update().Pop);
+//testdrawing.draw();
+//testpoly.draw();
+generation ++;
 }
